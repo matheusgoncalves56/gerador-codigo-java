@@ -7,6 +7,13 @@ public class Campo {
 	private String nome;
 	private Tipo tipo;
 	
+	public Campo() {}
+
+	public Campo(String nome, Tipo tipo) {
+		this.nome = nome;
+		this.tipo = tipo;
+	}
+	
 	public String getNome() {
 		return nome;
 	}
