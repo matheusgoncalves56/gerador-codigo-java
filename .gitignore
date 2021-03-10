@@ -60,5 +60,5 @@ local.properties
 .project
 
 .classpath
-/target/*
-/target/
+target/**
+target/

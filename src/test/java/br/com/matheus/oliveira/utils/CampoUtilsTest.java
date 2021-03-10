@@ -1,9 +1,11 @@
 package br.com.matheus.oliveira.utils;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import br.com.matheus.oliveira.entidades.Campo;
@@ -23,6 +25,20 @@ public class CampoUtilsTest {
 		boolean possuiCampo = CampoUtils.possuiCampoList(campos);
 	
 		//verificacao
-		Assert.assertTrue(possuiCampo);
+		assertThat(possuiCampo, is(true));
+	}
+	
+	@Test
+	public void deveRetornarQueNaoExisteCampoList() {
+		// cenario
+		List<Campo> campos = new ArrayList<Campo>();
+		campos.add(new Campo("teste1", Tipo.BOOLEAN));
+		campos.add(new Campo("teste3", Tipo.STRING));
+		
+		// acao
+		boolean possuiCampo = CampoUtils.possuiCampoList(campos);
+	
+		//verificacao
+		assertThat(possuiCampo, is(false));
 	}
 }
